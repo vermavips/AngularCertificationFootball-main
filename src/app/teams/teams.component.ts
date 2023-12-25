@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LeagueService } from '../leagues/shared/services/leagues.service';
+import { LeagueService } from '../football-leagues/shared/services/football-leagues.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ApiFixtureResponse } from '../leagues/shared/models/fixture.model';
+import { ApiFixtureResponse } from '../football-leagues/shared/models/fixture.model';
 
 @Component({
   selector: 'app-team-games',
-  templateUrl: './team-games.component.html',
-  styleUrls: ['./team-games.component.css']
+  templateUrl: './teams.component.html',
+  styleUrls: ['./teams.component.css']
 })
 export class TeamGamesComponent implements OnInit{
 

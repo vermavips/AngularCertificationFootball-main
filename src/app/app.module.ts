@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule, Routes } from '@angular/router';
-import { LeaguesComponent } from './leagues/leagues.component';
+import { LeaguesComponent } from './football-leagues/football-leagues.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TeamGamesComponent } from './team-games/team-games.component';
+import { TeamGamesComponent } from './teams/teams.component';
 
 const routes: Routes = [
-  { path: 'leagues/:name', component: LeaguesComponent },
-  { path: 'leagues/:name/:teamID', component: TeamGamesComponent},
-  { path: '**', redirectTo: '/leagues/england', pathMatch: 'full'}
+  { path: 'football-leagues/:name', component: LeaguesComponent },
+  { path: 'football-leagues/:name/:teamID', component: TeamGamesComponent},
+  { path: '**', redirectTo: '/football-leagues/england', pathMatch: 'full'}
 ]
 
 @NgModule({

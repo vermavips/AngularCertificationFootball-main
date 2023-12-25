@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LeagueService } from './shared/services/leagues.service';
+import { LeagueService } from './shared/services/football-leagues.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ApiStandingResponse } from './shared/models/standing.model';
 
 @Component({
   selector: 'app-leagues',
-  templateUrl: './leagues.component.html',
-  styleUrls: ['./leagues.component.css']
+  templateUrl: './football-leagues.component.html',
+  styleUrls: ['./football-leagues.component.css']
 })
 
 export class LeaguesComponent implements OnInit {
@@ -14,21 +14,15 @@ export class LeaguesComponent implements OnInit {
   teams : string[] = [];
   leagues_map: Map<string, ApiStandingResponse> = new Map();
 
-  constructor(private leagueService : LeagueService, private route: ActivatedRoute){
-    
+  constructor(private leagueService : LeagueService, private route: ActivatedRoute){    
   }
 
-
   ngOnInit(): void {
-
     this.route.params.subscribe((params: Params) => {
       this.name = params["name"];
-
-      this.leagueService.onGetLeagues(this.name);
-      
+      this.leagueService.onGetLeagues(this.name);      
       this.leagues_map = this.leagueService.getLeagueCache();
     });
-
     this.getValues();
   }
 
